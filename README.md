@@ -17,22 +17,18 @@ The way is being charted with wayfinder. The map lives in this repo's GitHub iss
 ## Architecture
 
 ```
-  [ pet one: ESP32-S3 board ]        [ pet two: ESP32-S3 board ]
-        MicroPython                        MicroPython
-      face / stats / touch               face / stats / touch
-             |                                  |
-             +------- TLS MQTT over the ------+
-                            internet
-                                |
-                 [ Mosquitto broker in Docker ]
-                   [ hermes-ubuntu-4gb-nbg1-1 ]
-                     Hetzner cloud, Nuremberg
-              QoS 1 queues hugs while a pet sleeps
+[ pet watch ] <--BLE--> [ phone app ] <--MQTT over TLS--> [ Mosquitto broker ]
+ MicroPython            background service,             on the Hetzner box
+ face / stats / touch   speaks MQTT so                  (Nuremberg). QoS 1 queues
+                        the pet never does               hugs while a pet sleeps
+
+    mirrored on both sides: her watch, her phone, same broker
 ```
 
 ## Software
 
 - Firmware: MicroPython. The personality (faces, stats, moods) is Python data, editable live.
+- Link: the pet is a BLE peripheral; a phone app (the largest remaining build item) carries the internet side, MQTT over TLS. The pet holds no WiFi credentials.
 - Broker: Mosquitto 2.x in Docker, per-device accounts, offline queueing via QoS 1.
 - Verbs: HUG, FEED, PET, TEXT, plus presence and battery reporting.
 
