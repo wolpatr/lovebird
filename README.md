@@ -8,7 +8,7 @@ The way is being charted with wayfinder. The map lives in this repo's GitHub iss
 
 ## Hardware (v0)
 
-- 2x Waveshare ESP32-S3-Touch-LCD-1.28, round 240x240 GC9A01 touch display, five-way joystick, USB-C, LiPo charging on board
+- 2x Waveshare ESP32-S3-Touch-LCD-1.28, round 240x240 GC9A01 touch display, CST816S touch, QMI8658 IMU (accelerometer + gyro), 16MB flash, USB-C, LiPo charging on board. Input is touch and motion only: there is no joystick on this board (verified against the Waveshare wiki)
   - Official product page (verified 2026-11-02): https://www.waveshare.com/esp32-s3-touch-lcd-1.28.htm (about $21.99 each)
   - Waveshare EU store (verified 2026-11-02): https://www.waveshare.eu/en/ESP32-S3-Touch-LCD-1.28.htm
   - Also stocked by EU hobby-electronics shops (berrybase.de, exp-tech.de); their shops are JS-rendered, so check stock on the site directly
