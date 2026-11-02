@@ -1,0 +1,11 @@
+__pycache__/
+*.pyc
+*.mpy
+.venv/
+build/
+dist/
+.idea/
+.vscode/
+*.log
+secrets/
+config_local.py
