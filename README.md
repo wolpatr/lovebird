@@ -1,6 +1,6 @@
 # lovebird
 
-Two internet-bonded tamagotchi pets. Each pet is a Waveshare ESP32-S3-Touch-LCD-1.28 round touch screen running MicroPython firmware: a face you can stroke, stats you keep alive, and a small vocabulary of gestures (hug, feed, pet, short messages) that travel over MQTT to the other pet, wherever it lives.
+Two internet-bonded tamagotchi pets. Each pet is a Waveshare ESP32-C6-Touch-LCD-1.28 round touch screen running MicroPython firmware: a face you can stroke, stats you keep alive, and a small vocabulary of gestures (hug, feed, pet, short messages) that travel over MQTT to the other pet, wherever it lives.
 
 ## Status
 
@@ -8,16 +8,15 @@ The way is being charted with wayfinder. The map lives in this repo's GitHub iss
 
 ## Hardware (v0)
 
-- 2x Waveshare ESP32-S3-Touch-LCD-1.28, round 240x240 GC9A01 touch display, CST816S touch, QMI8658 IMU (accelerometer + gyro), 16MB flash, USB-C, LiPo charging on board. Input is touch and motion only: there is no joystick on this board (verified against the Waveshare wiki)
-  - Official product page (verified 2026-11-02): https://www.waveshare.com/esp32-s3-touch-lcd-1.28.htm (about $21.99 each)
-  - Waveshare EU store (verified 2026-11-02): https://www.waveshare.eu/en/ESP32-S3-Touch-LCD-1.28.htm
-  - Also stocked by EU hobby-electronics shops (berrybase.de, exp-tech.de); their shops are JS-rendered, so check stock on the site directly
-- v0 runs USB powered. Batteries, buzzers and shells come later.
+- 2x Waveshare ESP32-C6-Touch-LCD-1.28 (metal case variant, ordered 2026-11-02, delivery 15-20 days): round 240x240 GC9A01 touch display, CST816S touch, QMI8658 IMU (accelerometer + gyro), 16MB flash, USB-C, RTC chip, TF slot, LiPo charging on board. Single-core RISC-V ESP32-C6 at 160MHz, 512KB SRAM, no PSRAM. Input is touch and motion only.
+  - Official product page (verified 2026-11-02): https://www.waveshare.com/esp32-c6-touch-lcd-1.28.htm ($19.99 bare / $24.99 metal case)
+  - Note: originally charted on the ESP32-S3-Touch-LCD-1.28-B; re-targeted after the order landed on the C6 (same display, touch, IMU and flash; different chip)
+- v0 runs USB powered. Batteries, buzzers come later; the metal case covers the shell question.
 
 ## Architecture
 
 ```
-  [ pet one: ESP32-S3 board ]        [ pet two: ESP32-S3 board ]
+  [ pet one: ESP32-C6 board ]         [ pet two: ESP32-C6 board ]
         MicroPython                        MicroPython
       face / stats / touch               face / stats / touch
              |                                  |

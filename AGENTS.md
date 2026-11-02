@@ -3,7 +3,7 @@
 ## Project facts
 
 - Dev machine: Windows 11, git-bash shell, Python 3.11/3.12. `gh` CLI is NOT installed. GitHub auth: token in `~/.git-credentials`, user wolpatr.
-- Firmware target: Waveshare ESP32-S3-Touch-LCD-1.28 (round GC9A01 touch display, CST816S touch, QMI8658 IMU, 16MB flash, no joystick on the board), MicroPython.
+- Firmware target: Waveshare ESP32-C6-Touch-LCD-1.28, metal case variant (ordered 2026-11-02, 15-20 day delivery): round GC9A01 touch display, CST816S touch, QMI8658 IMU, 16MB flash, RTC chip, TF slot, MX1.25 battery header. Single-core RISC-V ESP32-C6, NO PSRAM (512KB SRAM): a full 240x240 RGB565 frame is 112.5KB, a first-class firmware constraint. MicroPython build: ESP32_GENERIC_C6.
 - Broker target: Mosquitto in Docker on hermes-ubuntu-4gb-nbg1-1 (Hetzner cloud, Ubuntu, 4GB RAM, 40GB disk, Nuremberg).
 - Budget: about 50 euro total for two devices, stretchable to 100.
 - Writing rule: no em dashes anywhere (files, issues, commits, messages). Use plain hyphens or restructure the sentence.
