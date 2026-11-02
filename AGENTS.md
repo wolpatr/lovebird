@@ -5,7 +5,6 @@
 - Dev machine: Windows 11, git-bash shell, Python 3.11/3.12. `gh` CLI is NOT installed. GitHub auth: token in `~/.git-credentials`, user wolpatr.
 - Firmware target: Waveshare ESP32-S3-Touch-LCD-1.28 (round GC9A01 touch display, CST816S touch, QMI8658 IMU, 16MB flash, no joystick on the board), MicroPython.
 - Broker target: Mosquitto in Docker on hermes-ubuntu-4gb-nbg1-1 (Hetzner cloud, Ubuntu, 4GB RAM, 40GB disk, Nuremberg).
-- Connectivity re-orientation (2026-11-02): the pet is a BLE peripheral; a phone app bridges to the broker over MQTT-TLS. The pet holds no WiFi credentials. The broker posture from issue 6 is unchanged.
 - Budget: about 50 euro total for two devices, stretchable to 100.
 - Writing rule: no em dashes anywhere (files, issues, commits, messages). Use plain hyphens or restructure the sentence.
 - The repo is public: never put credentials, server IPs or personal details in anything pushed or posted here.
